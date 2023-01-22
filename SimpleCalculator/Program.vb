@@ -13,6 +13,7 @@ Module Program
     Sub Main(args As String())
         Dim firstNumber As Integer
         Dim secondNumber As Integer
+        Dim desiredOperation As String = ""
 
         Console.WriteLine("Please enter two whole numbers below that you wish to use for arithmetic...")
         Console.WriteLine("")
@@ -20,6 +21,9 @@ Module Program
         Console.WriteLine("Enter second number...")
         Console.WriteLine("")
         AcceptSecondNumber(secondNumber)
+        Console.WriteLine("Please select your desired operation, enter 1 for + or enter 2 for *")
+        Console.WriteLine("")
+        AcceptDesiredOperation(desiredOperation)
     End Sub
 
     Function AcceptFirstNumber(_firstNumber As Integer) As Integer
@@ -42,5 +46,16 @@ Module Program
         End Try
 
         Return _secondNumber
+    End Function
+
+    Function AcceptDesiredOperation(_desiredOperation As String) As String
+        _desiredOperation = Console.ReadLine()
+
+        If _desiredOperation <> "1" And _desiredOperation <> "2" Then
+            Console.WriteLine("Not a valid input, enter 1 for + or enter 2 for *")
+            AcceptDesiredOperation(_desiredOperation)
+        End If
+
+        Return _desiredOperation
     End Function
 End Module
