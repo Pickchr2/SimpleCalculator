@@ -18,18 +18,18 @@ Module Program
 
         Console.WriteLine("Please enter two whole numbers below that you wish to use for arithmetic...")
         Console.WriteLine("")
-        AcceptFirstNumber(firstNumber)
+        firstNumber = AcceptFirstNumber(firstNumber)
         Console.WriteLine("Enter second number...")
         Console.WriteLine("")
-        AcceptSecondNumber(secondNumber)
+        secondNumber = AcceptSecondNumber(secondNumber)
         Console.WriteLine("Please select your desired operation, enter 1 for + or enter 2 for *")
         Console.WriteLine("")
-        AcceptDesiredOperation(desiredOperation)
+        desiredOperation = AcceptDesiredOperation(desiredOperation)
 
         If desiredOperation = "1" Then
             desiredOperation = "sum"
             mathResult = firstNumber + secondNumber
-        Else
+        ElseIf desiredOperation = "2" Then
             desiredOperation = "product"
             mathResult = firstNumber * secondNumber
         End If
@@ -42,7 +42,7 @@ Module Program
             _firstNumber = CInt(Console.ReadLine())
         Catch ex As Exception
             Console.WriteLine("Sorry, that is not a whole number.")
-            AcceptFirstNumber(_firstNumber)
+            _firstNumber = AcceptFirstNumber(_firstNumber)
         End Try
 
         Return _firstNumber
@@ -53,7 +53,7 @@ Module Program
             _secondNumber = CInt(Console.ReadLine())
         Catch ex As Exception
             Console.WriteLine("Sorry, that is not a whole number.")
-            AcceptFirstNumber(_secondNumber)
+            _secondNumber = AcceptFirstNumber(_secondNumber)
         End Try
 
         Return _secondNumber
@@ -64,7 +64,7 @@ Module Program
 
         If _desiredOperation <> "1" And _desiredOperation <> "2" Then
             Console.WriteLine("Not a valid input, enter 1 for + or enter 2 for *")
-            AcceptDesiredOperation(_desiredOperation)
+            _desiredOperation = AcceptDesiredOperation(_desiredOperation)
         End If
 
         Return _desiredOperation
