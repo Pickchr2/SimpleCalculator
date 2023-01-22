@@ -17,13 +17,12 @@ Module Program
         Dim mathResult As Integer
 
         Console.WriteLine("Please enter two whole numbers below that you wish to use for arithmetic...")
-        Console.WriteLine("")
         firstNumber = AcceptFirstNumber(firstNumber)
+        Console.WriteLine("")
         Console.WriteLine("Enter second number...")
-        Console.WriteLine("")
         secondNumber = AcceptSecondNumber(secondNumber)
-        Console.WriteLine("Please select your desired operation, enter 1 for + or enter 2 for *")
         Console.WriteLine("")
+        Console.WriteLine("Please select your desired operation, enter 1 for + or enter 2 for *")
         desiredOperation = AcceptDesiredOperation(desiredOperation)
 
         If desiredOperation = "1" Then
@@ -34,6 +33,7 @@ Module Program
             mathResult = firstNumber * secondNumber
         End If
 
+        Console.WriteLine("")
         Console.WriteLine("The " & desiredOperation & " of " & firstNumber & " and " & secondNumber & " is " & mathResult)
     End Sub
 
