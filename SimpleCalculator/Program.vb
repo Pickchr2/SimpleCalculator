@@ -14,6 +14,7 @@ Module Program
         Dim firstNumber As Integer
         Dim secondNumber As Integer
         Dim desiredOperation As String = ""
+        Dim mathResult As Integer
 
         Console.WriteLine("Please enter two whole numbers below that you wish to use for arithmetic...")
         Console.WriteLine("")
@@ -24,6 +25,16 @@ Module Program
         Console.WriteLine("Please select your desired operation, enter 1 for + or enter 2 for *")
         Console.WriteLine("")
         AcceptDesiredOperation(desiredOperation)
+
+        If desiredOperation = "1" Then
+            desiredOperation = "sum"
+            mathResult = firstNumber + secondNumber
+        Else
+            desiredOperation = "product"
+            mathResult = firstNumber * secondNumber
+        End If
+
+        Console.WriteLine("The " & desiredOperation & " of " & firstNumber & " and " & secondNumber & " is " & mathResult)
     End Sub
 
     Function AcceptFirstNumber(_firstNumber As Integer) As Integer
