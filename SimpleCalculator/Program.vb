@@ -11,7 +11,21 @@ Imports System
 
 Module Program
     Sub Main(args As String())
-        Console.WriteLine("Please enter two numbers below that you wish to use for arithmetic...")
+        Dim firstNumber As Integer
+
+        Console.WriteLine("Please enter two whole numbers below that you wish to use for arithmetic...")
         Console.WriteLine("")
+        AcceptFirstNumber(firstNumber)
     End Sub
+
+    Function AcceptFirstNumber(_firstNumber As Integer) As Integer
+        Try
+            _firstNumber = CInt(Console.ReadLine())
+        Catch ex As Exception
+            Console.WriteLine("Sorry, that is not a whole number.")
+            AcceptFirstNumber(_firstNumber)
+        End Try
+
+        Return _firstNumber
+    End Function
 End Module
